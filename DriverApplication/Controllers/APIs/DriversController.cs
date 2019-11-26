@@ -80,34 +80,33 @@ namespace DriverApplication.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != driver.DriverId)
-            {
-                return BadRequest();
-            }
-
             //db.Entry(driver).State = EntityState.Modified;
-            driverService.PutDriver(driver);
+            driver.Driver_id = id;
+            string msg = driverService.PutDriver(driver);
+            driverService.SaveDriver();
+            //try
+            //{
+            //    //db.SaveChanges();
+            //    driverService.SaveDriver();
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DriverExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            //}
+            //catch (DbUpdateConcurrencyException)
+            //{
+            //    if (!DriverExists(id))
+            //    {
+            //        return NotFound();
+            //    }
+            //    else
+            //    {
+            //        throw;
+            //    }
+            //}
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return Ok(msg);
         }
 
         // POST: api/Drivers
+        [NotImplExceptionFilter]
         [HttpPost]
         [Route("drivers")]
         [ResponseType(typeof(Driver))]
@@ -115,14 +114,20 @@ namespace DriverApplication.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
-            }
+                //return BadRequest(ModelState);
 
+                // exception handling using HttpError with HttpResponseException..
+                var message = string.Format("please try again with valid properties");
+                throw new HttpResponseException(
+                    Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
+
+            }
+            driver.Ip_address = "192.168.1.1.1.1";      // assign other values which are not sent by client like this..
             driverService.CreateDriver(driver);
             driverService.SaveDriver();
             //db.Commit();
 
-            return Created(new Uri(Request.RequestUri + "/" + driver.DriverId), driver);
+            return Created(new Uri(Request.RequestUri + "/" + driver.Driver_id), driver);
         }
 
         // DELETE: api/Drivers/5
@@ -156,7 +161,7 @@ namespace DriverApplication.Controllers
 
         private bool DriverExists(int id)
         {
-            return db.Drivers.Count(e => e.DriverId == id) > 0;
+            return db.mt_driver.Count(e => e.Driver_id == id) > 0;
         }
     }
 }

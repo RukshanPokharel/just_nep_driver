@@ -31,7 +31,6 @@ namespace DriverApplication.Repositories
             dbSet = DbContext.Set<T>();
         }
 
-        
         public virtual void Add(T entity)
         {
             dbSet.Add(entity);

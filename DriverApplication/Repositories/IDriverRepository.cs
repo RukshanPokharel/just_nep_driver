@@ -9,5 +9,6 @@ namespace DriverApplication.Repositories
     public interface IDriverRepository : IRepository<Driver>
     {
         Driver GetDriverByName(string driverName);
+        string UpdateDriver(Driver driver);
     }
 }

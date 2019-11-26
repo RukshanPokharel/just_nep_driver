@@ -12,7 +12,7 @@ namespace DriverApplication.Services
         Driver GetDriver(int id);
         Driver GetDriver(string name);
         void CreateDriver(Driver driver);
-        void  PutDriver(Driver driver);
+        string  PutDriver(Driver driver);
         void  DeleteDriver(Driver driver);
         void SaveDriver();
 

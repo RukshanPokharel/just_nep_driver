@@ -48,9 +48,10 @@ namespace DriverApplication.Services
             return driver;
         }
 
-        public void PutDriver(Driver driver)
+        public string PutDriver(Driver driver)
         {
-            driversRepository.Update(driver);
+            string msg = driversRepository.UpdateDriver(driver);
+            return msg;
         }
 
         public void SaveDriver()
