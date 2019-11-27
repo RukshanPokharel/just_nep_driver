@@ -15,24 +15,24 @@ namespace DriverApplication.Models
         [JsonIgnore]
         public int Team_id { get => team_id; set => team_id = value; }
 
-        [StringLength(100)]
         private string user_type;
+        [StringLength(100)]
         public string User_type { get => user_type; set => user_type = value; }
 
-        [DefaultValue(0)]
         private int user_id;
+        [DefaultValue(0)]
         public int User_id { get => user_id; set => user_id = value; }
 
-        [StringLength(255)]
         private string team_name;
+        [StringLength(255)]
         public string Team_name { get => team_name; set => team_name = value; }
 
-        [StringLength(50)]
         private string location_accuracy;
+        [StringLength(50)]
         public string Location_accuracy { get => location_accuracy; set => location_accuracy = value; }
 
-        [StringLength(255)]
         private string status;
+        [StringLength(255)]
         public string Status { get => status; set => status = value; }
 
         private DateTime? date_created;
@@ -41,8 +41,8 @@ namespace DriverApplication.Models
         private DateTime? date_modified;
         public DateTime? Date_modified { get => date_modified; set => date_modified = value; }
 
-        [StringLength(50)]
         private string ip_address;
+        [StringLength(50)]
         public string Ip_address { get => ip_address; set => ip_address = value; }
 
     }

@@ -6,8 +6,8 @@ using System.Web;
 
 namespace DriverApplication.Repositories
 {
-    public interface IDriverTasksRepository : IRepository<DriverTask>
+    public interface IDriverTeamsRepository : IRepository<DriverTeam>
     {
-        string UpdateDriverTask(DriverTask driverTask);
+        string UpdateDriverTeam(DriverTeam driverTeam);
     }
 }

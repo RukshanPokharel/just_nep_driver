@@ -43,7 +43,7 @@ namespace DriverApplication.Services
 
         public string PutDriverTask(DriverTask driverTask)
         {
-            string msg = driversTasksRepository.UpdateDriver(driverTask);
+            string msg = driversTasksRepository.UpdateDriverTask(driverTask);
             return msg;
         }
 

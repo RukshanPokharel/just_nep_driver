@@ -12,7 +12,7 @@ namespace DriverApplication.Repositories
         public DriverTasksRepository(IDbFactory dbFactory)
             : base(dbFactory) { }
 
-        public string UpdateDriver(DriverTask driverTask)
+        public string UpdateDriverTask(DriverTask driverTask)
         {
 
             var driverTaskInDb = this.DbContext.mt_driver_task.Where(c => c.Task_id == driverTask.Task_id).Single<DriverTask>();

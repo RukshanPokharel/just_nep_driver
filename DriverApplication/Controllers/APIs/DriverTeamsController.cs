@@ -11,32 +11,29 @@ using System.Web.Http.Description;
 
 namespace DriverApplication.Controllers.APIs
 {
-    public class DriverTasksController : ApiController
+    public class DriverTeamsController : ApiController
     {
-        private IDriverTasksService driverTaskService;
-        public DriverTasksController(IDriverTasksService driverTaskService)
+        private IDriverTeamsService driverTeamsService;
+        public DriverTeamsController(IDriverTeamsService driverTeamsService)
         {
-            this.driverTaskService = driverTaskService;
+            this.driverTeamsService = driverTeamsService;
         }
 
-        // GET all driverTasks.
         [HttpGet]
-        [Route("tasks")]
-        public IEnumerable<DriverTask> GetDriverTasks()
+        [Route("teams")]
+        public IEnumerable<DriverTeam> GetDriverTeams()
         {
-            return driverTaskService.GetDriverTasks().ToList();
+            return driverTeamsService.GetDriverTeams().ToList();
         }
 
-
-        // GET: api/DriverTask/5
         [HttpGet]
-        [Route("tasks/{id}")]
-        [ResponseType(typeof(DriverTask))]
-        public IHttpActionResult GetDriverTask(int id)
+        [Route("teams/{id}")]
+        [ResponseType(typeof(DriverTeam))]
+        public IHttpActionResult GetDriverTeams(int id)
         {
-            DriverTask driverTask = driverTaskService.GetDriverTask(id);
+            DriverTeam driverTeam = driverTeamsService.GetDriverTeam(id);
 
-            if (driverTask == null)
+            if (driverTeam == null)
             {
                 //return NotFound();
 
@@ -51,21 +48,21 @@ namespace DriverApplication.Controllers.APIs
 
 
                 // exception handling using HttpError with HttpResponseException..
-                var message = string.Format("your search id is not availabe. try again with a valid driver task id.", id);
+                var message = string.Format("your search id is not availabe. try again with a valid driver team id.", id);
                 throw new HttpResponseException(
                     Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
 
             }
 
-            return Ok(driverTask);
+            return Ok(driverTeam);
         }
 
-        // POST: api/DriversTask
+
         [NotImplExceptionFilter]
         [HttpPost]
-        [Route("tasks")]
-        [ResponseType(typeof(DriverTask))]
-        public IHttpActionResult CreateDriverTask(DriverTask driverTask)
+        [Route("teams")]
+        [ResponseType(typeof(DriverTeam))]
+        public IHttpActionResult CreateDriverTeam(DriverTeam driverTeam)
         {
             if (!ModelState.IsValid)
             {
@@ -77,17 +74,18 @@ namespace DriverApplication.Controllers.APIs
                     Request.CreateErrorResponse(HttpStatusCode.NotFound, message));
 
             }
-            driverTaskService.CreateDriverTask(driverTask);
-            driverTaskService.SaveDriverTask();
+            driverTeamsService.CreateDriverTeam(driverTeam);
+            driverTeamsService.SaveDriverTeam();
             //db.Commit();
 
-            return Created(new Uri(Request.RequestUri + "/" + driverTask.Task_id), driverTask);
+            return Created(new Uri(Request.RequestUri + "/" + driverTeam.Team_id), driverTeam);
         }
 
+
         [HttpPut]
-        [Route("tasks")]
+        [Route("teams")]
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutDriverTask(int id, DriverTask driverTask)
+        public IHttpActionResult PutDriverTeam(int id, DriverTeam driverTeam)
         {
             if (!ModelState.IsValid)
             {
@@ -95,9 +93,9 @@ namespace DriverApplication.Controllers.APIs
             }
 
             //db.Entry(driver).State = EntityState.Modified;
-            driverTask.Task_id = id;
-            string msg = driverTaskService.PutDriverTask(driverTask);
-            driverTaskService.SaveDriverTask();
+            driverTeam.Team_id = id;
+            string msg = driverTeamsService.PutDriverTeam(driverTeam);
+            driverTeamsService.SaveDriverTeam();
             //try
             //{
             //    //db.SaveChanges();
@@ -119,24 +117,21 @@ namespace DriverApplication.Controllers.APIs
             return Ok(msg);
         }
 
-
         [HttpDelete]
-        [Route("tasks")]
-        [ResponseType(typeof(DriverTask))]
-        public IHttpActionResult DeleteDriverTask(int id)
+        [Route("teams")]
+        [ResponseType(typeof(DriverTeam))]
+        public IHttpActionResult DeleteDriverTeam(int id)
         {
-            DriverTask driverTask = driverTaskService.GetDriverTask(id);
-            if (driverTask == null)
+            DriverTeam driverTeam = driverTeamsService.GetDriverTeam(id);
+            if (driverTeam == null)
             {
                 return NotFound();
             }
 
-            driverTaskService.DeleteDriverTask(driverTask);
-            driverTaskService.SaveDriverTask();
-            //db.Drivers.Remove(driver);
-            //db.SaveChanges();
-
-            return Ok(driverTask);
+            driverTeamsService.DeleteDriverTeam(driverTeam);
+            driverTeamsService.SaveDriverTeam();
+            
+            return Ok(driverTeam);
         }
     }
 }
