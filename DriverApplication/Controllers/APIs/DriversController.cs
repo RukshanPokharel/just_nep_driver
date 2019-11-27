@@ -18,6 +18,7 @@ using DriverApplication.Utilities;
 namespace DriverApplication.Controllers
 {
     [NotImplExceptionFilter]
+    [Route("drivers")]
     public class DriversController : ApiController
     {
         private DBContext db = new DBContext();

@@ -201,3 +201,4 @@ C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\System.Xml
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\System.Xml.XPath.XDocument.dll
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\Json.Net.dll
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.Migrations.ChangingDataAnnotations.resources
+C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.Migrations.DriverTaskTableCreated.resources

@@ -23,6 +23,7 @@ namespace DriverApplication.App_Start
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.RegisterType<DriverServices>().As<IDriverService>().InstancePerRequest();
             builder.RegisterType<DriverRepository>().As<IDriverRepository>().InstancePerRequest();
+            builder.RegisterType<DriverTasksRepository>().As<IDriverTasksRepository>().InstancePerRequest();
 
             // Repositories
             builder.RegisterAssemblyTypes(typeof(DriverRepository).Assembly)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -11,6 +12,7 @@ namespace DriverApplication.Models
     {
         private int team_id;
         [Key]
+        [JsonIgnore]
         public int Team_id { get => team_id; set => team_id = value; }
 
         [StringLength(100)]

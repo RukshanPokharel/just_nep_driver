@@ -196,6 +196,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\APIs\DriversController.cs" />
+    <Compile Include="Controllers\APIs\DriverTasksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTOs\DriverDto.cs" />
@@ -223,16 +224,25 @@
     <Compile Include="Migrations\201911261138469_ChangingDataAnnotations.designer.cs">
       <DependentUpon>201911261138469_ChangingDataAnnotations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911270657207_DriverTaskTableCreated.cs" />
+    <Compile Include="Migrations\201911270657207_DriverTaskTableCreated.designer.cs">
+      <DependentUpon>201911270657207_DriverTaskTableCreated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Driver.cs" />
+    <Compile Include="Models\DriverTask.cs" />
     <Compile Include="Models\DriverTeam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DriverRepository.cs" />
+    <Compile Include="Repositories\DriverTasksRepository.cs" />
     <Compile Include="Repositories\IDriverRepository.cs" />
+    <Compile Include="Repositories\IDriverTasksRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Services\DriverServices.cs" />
+    <Compile Include="Services\DriverTasksService.cs" />
     <Compile Include="Services\IDriverService.cs" />
+    <Compile Include="Services\IDriverTasksService.cs" />
     <Compile Include="Utilities\DBContext.cs" />
     <Compile Include="Utilities\DbFactory.cs" />
     <Compile Include="Utilities\Disposable.cs" />
@@ -313,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911261138469_ChangingDataAnnotations.resx">
       <DependentUpon>201911261138469_ChangingDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911270657207_DriverTaskTableCreated.resx">
+      <DependentUpon>201911270657207_DriverTaskTableCreated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
