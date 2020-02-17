@@ -10,7 +10,6 @@ namespace DriverApplication.Services
     {
         IEnumerable<DriverTask> GetDriverTasks();
         DriverTask GetDriverTask(int id);
-        //DriverTask GetDriverTask(string name);
         void CreateDriverTask(DriverTask driverTask);
         string PutDriverTask(DriverTask driverTask);
         void DeleteDriverTask(DriverTask driverTask);

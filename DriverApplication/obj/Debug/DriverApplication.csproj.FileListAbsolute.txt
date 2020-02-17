@@ -98,11 +98,6 @@ C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\MySql.Data
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\MySql.Data.Entity.EF6.dll
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\MySql.Data.xml
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\MySql.Data.Entity.EF6.xml
-C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.Migrations.AddDriverEntity.resources
-C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.csproj.GenerateResource.cache
-C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.Migrations.AddedDriverTeamTable.resources
-C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.Migrations.AddingGetterAndSetterInModel.resources
-C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.Migrations.DriverModelModified.resources
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\Microsoft.Win32.Primitives.dll
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\netstandard.dll
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\System.AppContext.dll
@@ -200,5 +195,5 @@ C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\System.Xml
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\System.Xml.XPath.dll
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\System.Xml.XPath.XDocument.dll
 C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\bin\Json.Net.dll
-C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.Migrations.ChangingDataAnnotations.resources
-C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.Migrations.DriverTaskTableCreated.resources
+C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.Migrations.EntitiesUpdate.resources
+C:\Users\Samsung\source\repos\DriverApplication\DriverApplication\obj\Debug\DriverApplication.csproj.GenerateResource.cache

@@ -7,13 +7,13 @@ namespace DriverApplication.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0-preview3-19553-01")]
-    public sealed partial class AddingGetterAndSetterInModel : IMigrationMetadata
+    public sealed partial class EntitiesUpdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddingGetterAndSetterInModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(EntitiesUpdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911251205409_AddingGetterAndSetterInModel"; }
+            get { return "201912020658146_EntitiesUpdate"; }
         }
         
         string IMigrationMetadata.Source
